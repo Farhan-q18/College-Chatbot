@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>HITK CHATBOT</title>
 
-```
 <style>
     body {
         margin: 0;
@@ -98,7 +96,6 @@
         color: #60a5fa;
     }
 </style>
-```
 
 </head>
 
@@ -106,81 +103,127 @@
 
 <div class="chat-container">
 
-```
 <div class="header">
     🎓 College Helpdesk Bot
 </div>
 
-<div class="chat-box" id="chatBox"></div>
+<div class="chat-box" id="chatBox">
+    <div class="message bot">
+        👋 Hi, I am your HITK Chatbot.<br><br>
+        Before we begin, may I know your name?
+    </div>
+</div>
 
 <div class="input-area">
-    <input type="text" id="msg" placeholder="Ask something...">
+    <input type="text" id="msg" placeholder="Type your message...">
     <button onclick="send()">Send</button>
 </div>
-```
 
 </div>
 
 <script>
 
-    function send() {
-        let msgInput = document.getElementById("msg");
-        let msg = msgInput.value;
-    
-        if (!msg) return;
-    
-        let chatBox = document.getElementById("chatBox");
-    
-        // User message
-        chatBox.innerHTML += `<div class="message user">${msg}</div>`;
-    
-        // 🔥 Typing animation
+let userName = "";
+
+function send() {
+    let msgInput = document.getElementById("msg");
+    let msg = msgInput.value.trim();
+
+    if (!msg) return;
+
+    let chatBox = document.getElementById("chatBox");
+
+    // Show user message
+    chatBox.innerHTML += `<div class="message user">${msg}</div>`;
+
+    // Words that are NOT names
+    const invalidNames = ["hi", "hello", "hey", "yo"];
+
+    // 🔥 NAME LOGIC
+    if (userName === "") {
+
         let typingDiv = document.createElement("div");
         typingDiv.className = "message bot";
         typingDiv.innerText = "Bot is typing...";
         chatBox.appendChild(typingDiv);
-    
-        chatBox.scrollTop = chatBox.scrollHeight;
-    
-        fetch("/chat", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({message: msg})
-        })
-        .then(res => res.json())
-        .then(data => {
-    
-            let response = data.response;
-    
-            // Make links clickable
-            if (response.includes("http")) {
-                response = response.replace(
-                    /(https?:\/\/[^\s]+)/g,
-                    '<a href="$1" target="_blank">📄 Open Link</a>'
-                );
+
+        setTimeout(() => {
+
+            if (invalidNames.includes(msg.toLowerCase())) {
+                typingDiv.innerHTML = `
+                😊 I didn't catch your name.<br>
+                Please tell me your name to continue.
+                `;
+            } else {
+                userName = msg;
+
+                typingDiv.innerHTML = `
+                Nice to meet you, <b>${userName}</b> 👋<br><br>
+                I can assist you with:<br>
+                • Admission<br>
+                • Fees<br>
+                • Courses<br>
+                • Routine<br>
+                • Notices<br>
+                • Student Portal<br><br>
+                How can I help you today?
+                `;
             }
-    
-            // 🔥 Replace typing with actual response
-            typingDiv.innerHTML = response;
-    
+
             chatBox.scrollTop = chatBox.scrollHeight;
-        });
-    
+
+        }, 800);
+
         msgInput.value = "";
+        return;
     }
-    
-    // Enter key support
-    document.getElementById("msg").addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-            send();
+
+    // 🔥 NORMAL CHATBOT FLOW
+    let typingDiv = document.createElement("div");
+    typingDiv.className = "message bot";
+    typingDiv.innerText = "Bot is typing...";
+    chatBox.appendChild(typingDiv);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: msg})
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        let response = data.response;
+
+        if (response.includes("http")) {
+            response = response.replace(
+                /(https?:\/\/[^\s]+)/g,
+                '<a href="$1" target="_blank">📄 Open Link</a>'
+            );
         }
+
+        // Personalize response
+        response = `👤 <b>${userName}</b>,<br>${response}`;
+
+        typingDiv.innerHTML = response;
+        chatBox.scrollTop = chatBox.scrollHeight;
     });
-    
-    // Auto focus
-    document.getElementById("msg").focus();
-    
-    </script>
-    
+
+    msgInput.value = "";
+}
+
+// Enter key support
+document.getElementById("msg").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        send();
+    }
+});
+
+// Auto focus
+document.getElementById("msg").focus();
+
+</script>
 
 </body>
 </html>

@@ -9,7 +9,7 @@ def home():
     return render_template("index.html")
 
 
-# 📄 PDF download route (for fees)
+# 📄 PDF route (you can keep it if needed for direct access)
 @app.route("/get-fee-pdf")
 def get_fee_pdf():
     return send_file("document_loaders/BTech_2025_2026.pdf", as_attachment=True)
@@ -22,27 +22,23 @@ def chat():
 
     tag, confidence = predict_intent(user_input)
 
-    # 🔍 Debug (optional, remove later)
+    # 🔍 Debug (optional)
     print("User:", user_input)
     print("Tag:", tag)
     print("Confidence:", confidence)
 
-    # 🔥 VERY LOW CONFIDENCE → fallback
+    # 🔥 Low confidence fallback
     if confidence < 0.3:
         response = "Sorry, I didn't understand. Try asking about admission, fees, courses, routine, notices, login, etc."
 
-    # 🔥 Fees → send PDF link
-    elif tag == "fees":
-        response = "You can download the fee structure here: http://127.0.0.1:5000/get-fee-pdf"
-
-    # 🔥 Normal intent-based response
+    # 🔥 All responses handled via intents.json
     else:
         response = get_response(tag)
 
     return jsonify({"response": response})
 
 
-# ▶ Run app
+# ▶ Run app (Render compatible)
 import os
 
 if __name__ == "__main__":
