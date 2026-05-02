@@ -1,0 +1,288 @@
+{
+    "intents": [
+      {
+        "tag": "admission",
+        "patterns": [
+          "How to take admission",
+          "Admission process",
+          "Is admission open",
+          "How can I apply",
+          "Procedure for admission",
+          "How to get admission in this college",
+          "Admission details",
+          "Steps for admission",
+          "How to join this college",
+          "Eligibility for admission",
+          "Admission criteria",
+          "When does admission start",
+          "Is admission going on",
+          "How to apply for BTech",
+          "Admission form details",
+          "How to enroll in college",
+          "Admission requirements",
+          "What is the admission process for BTech",
+          "Can I apply now",
+          "Admission information",
+          "Btech admission",
+          "Admission in Btech"
+        ],
+        "responses": [
+  "Admissions for B.Tech programs are currently open. You can check complete details, eligibility criteria, and application process here: https://www.heritageit.edu/PDF/BTech_2025_2026.pdf",
+  "For admission-related queries, please refer to the official brochure: https://www.heritageit.edu/PDF/BTech_2025_2026.pdf or contact the college at 9830201234 / (033) 6627 0623."
+]
+      },
+      {
+        "tag": "courses",
+        "patterns": [
+          "What courses are offered",
+          "Available branches",
+          "CSE course details",
+          "Which courses are available",
+          "Programs offered by college",
+          "List of courses",
+          "What branches are there",
+          "Engineering branches available",
+          "Courses in this college",
+          "What can I study here",
+          "Available departments",
+          "Does college offer CSE",
+          "Is ECE available",
+          "What are the BTech branches",
+          "Courses provided by college",
+          "Which engineering streams are offered",
+          "Tell me about courses",
+          "Degree programs available",
+          "Course list of college",
+          "Branches in BTech"
+        ],
+        "responses": [
+  "The college offers a variety of B.Tech programs including Computer Science (CSE), Electronics & Communication (ECE), Electrical Engineering (EE), Mechanical Engineering (ME), and more.",
+  "You can explore all available undergraduate programs and departments here: https://www.heritageit.edu/UndergraduateProgms.aspx"
+]
+      },
+      {
+        "tag": "contact",
+        "patterns": [
+          "College contact number",
+          "How to contact college",
+          "College phone number",
+          "Contact details",
+          "How can I reach college",
+          "Email address of college",
+          "College helpline number",
+          "How to call college",
+          "Contact information",
+          "College address",
+          "Where is college located",
+          "How to reach college",
+          "Location of college",
+          "College email id",
+          "Phone number of college",
+          "How to get in touch",
+          "College support contact",
+          "Contact office details",
+          "Help desk contact",
+          "Administration contact"
+          
+        ],
+        "responses": [
+  "You can contact the college through the official website: https://www.heritageit.edu/ or call the helpdesk at 9830201234 / (033) 6627 0623.",
+  "For further assistance, please reach out via phone at 9830201234 or visit the official website contact section."
+]
+      },
+       {
+        "tag": "fees",
+        "patterns": [
+    "What is the fee structure",
+    "Fee structure",
+    "How much fees",
+    "Semester fee",
+    "Fee details",
+    "Fee information",
+    "Fee structure details",
+    "Fee structure information",
+
+    "How much is the college fee",
+    "Total fees for BTech",
+    "What is the tuition fee",
+    "How much do I need to pay per semester",
+    "What is the yearly fee",
+    "Fees for engineering course",
+    "Cost of studying in this college",
+    "What is the admission fee",
+    "Breakdown of fees",
+    "How much is hostel fee",
+    "Do I have to pay fees every semester",
+    "What are the charges for BTech",
+    "What is the total cost of course",
+    "Is there any additional fee",
+    "How much money is required for admission",
+    "Fees for CSE branch",
+    "What is the semester-wise fee",
+    "How much fees per year",
+    "Tell me about fee structure",
+    "Explain fee details",
+    "What are the fees in this college",
+    "How much fee should I pay",
+    "Fee amount for first year",
+    "First year fee details",
+    "Fees for different branches",
+    "Is fee same for all branches",
+    "How much is college tuition",
+    "Give me fee info",
+    "Fee details for engineering",
+    "What is the total fee for 4 years",
+    "How much is BTech fee overall",
+
+    "What is the fee for BTech lateral entry",
+    "Lateral entry fee structure",
+    "Fees for lateral entry students",
+    "How much fee for lateral entry in BTech",
+    "What is the cost for lateral entry admission",
+    "Fee details for diploma to BTech admission",
+    "What is the fee for second year direct admission",
+    "How much fees for lateral entry students per semester",
+    "Total fee for lateral entry BTech",
+    "Lateral entry admission fee details"
+    ],
+        "responses": [
+  "You can view the detailed B.Tech fee structure here: https://www.heritageit.edu/PDF/BTech_2025_2026.pdf",
+  "For lateral entry admissions, please refer to the fee details here: https://www.heritageit.edu/PDF/BriefInformationBTech2025_Lateral.pdf"
+]
+        
+      },
+      {
+        "tag": "class_routine",
+        "patterns": [
+          "Give me the class routine",
+          "What is the routine",
+          "Class routine",
+          "Show me class schedule",
+          "Class timings",
+          "Daily class routine",
+          "Weekly routine",
+          "Lecture schedule",
+          "When are my classes",
+          "College timetable",
+          "Class schedule for CSE"
+          ],
+        "responses": [
+  "The class routine and timetable for all departments are available on the official website. You can check it here: https://www.heritageit.edu/routines.aspx",
+  "Please visit the official routine page to view your class schedule: https://www.heritageit.edu/routines.aspx"
+]
+      },
+      {
+        "tag": "student_login",
+        "patterns": [
+          "How to login to students portal",
+          "Login to students portal",
+          "Students portal login",
+          "How to access students portal",
+          "Students portal access",
+          "Login student portal",
+          "How can I login to portal",
+          "Student login page",
+          "Access student dashboard",
+          "Open student portal"
+        ],
+        "responses": [
+  "You can access the student portal using the following link: https://theheritage.ac.in/LoginStudent.aspx",
+  "Click here to log in to the student dashboard: https://theheritage.ac.in/LoginStudent.aspx"
+]
+      },
+      
+        {
+            "tag": "notice",
+            "patterns": [
+              "Give me latest notice",
+              "what is the latest notice",
+              "What are the notices",
+              "What are the class notices",
+              "Notices",
+              "notice",
+              "Notice information",
+              "Notice details",
+              "Notices for students",
+              "College notices",
+              "Latest notices",
+              "Recent notices",
+              "Notice for college",
+              "Show notices",
+              "Any new notice",
+              "College updates",
+              "Announcements",
+              "Student notices",
+              "Official notices"
+            ],
+            "responses": [
+  "You can check the latest notices and announcements on the official notice board here: https://www.heritageit.edu/Notice.aspx",
+  "All recent updates and notices are available here: https://www.heritageit.edu/Notice.aspx"
+]
+          },
+      {
+        "tag":"exam_routine",
+        "patterns": [
+          "Exam routine",
+          "Exam schedule",
+          "Exam dates",
+          "Exam timetable",
+          "When are exams",
+          "Final exam schedule",
+          "Semester exam routine",
+          "Exam calendar",
+          "Time table for exams",
+          "When is my exam",
+          "What is the exam routine"
+
+      ],
+      "responses": [
+  "The examination timetable is published on the official website. You can access it here: https://www.heritageit.edu/NoticePDF/62389375Not270426.pdf",
+  "Please refer to the official exam schedule using this link: https://www.heritageit.edu/NoticePDF/62389375Not270426.pdf"
+]
+    },
+    {
+        "tag":"anti_ragging",
+        "patterns": [
+  "What is the anti ragging policy",
+  "Anti ragging policy",
+  "Tell me about anti ragging rules",
+  "Is ragging allowed in college",
+  "What are the rules against ragging",
+  "Anti ragging guidelines",
+  "What happens if someone does ragging",
+  "Punishment for ragging",
+  "How does college prevent ragging",
+  "Is there anti ragging committee",
+  "Ragging rules in college",
+  "What are anti ragging laws",
+  "Is ragging strictly prohibited",
+  "What should I do if ragging happens",
+  "How to report ragging",
+  "Anti ragging measures in college",
+  "Does college have anti ragging policy",
+  "What are consequences of ragging",
+  "Is ragging banned",
+  "How safe is college from ragging"
+],
+"responses": [
+  "The college strictly follows anti-ragging regulations as per government norms. Ragging is strictly prohibited, and strict disciplinary action is taken against offenders.",
+  "You can review the official anti-ragging policy here: https://www.heritageit.edu/PDF/AntiRaggingWarning.pdf"
+]
+    },
+    {
+        
+        "tag": "fallback",
+            "patterns": [
+              "asdfgh",
+              "random text",
+              "i dont understand"
+            ],
+            "responses": [
+  "I’m sorry, I couldn’t understand your query. Please try rephrasing your question or ask about admission, fees, courses, routine, notices, or login.",
+  "I’m not sure I understood that. You may ask about college admissions, fees, courses, schedules, or student services."
+]
+          }
+    
+
+    ]
+  }

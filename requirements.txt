@@ -1,0 +1,17 @@
+flask
+scikit-learn
+nltk
+numpy
+pandas
+joblib
+
+langchain
+langchain-core
+langchain-google-genai
+langchain-community
+langchain-text-splitters
+
+chromadb
+
+pypdf
+sentence-transformers

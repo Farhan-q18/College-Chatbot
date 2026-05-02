@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>HITK CHATBOT</title>
+
+```
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .chat-container {
+        width: 420px;
+        height: 600px;
+        background: #1e293b;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        overflow: hidden;
+    }
+
+    .header {
+        background: #2563eb;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .chat-box {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .message {
+        max-width: 75%;
+        padding: 10px 14px;
+        border-radius: 15px;
+        line-height: 1.4;
+    }
+
+    .user {
+        align-self: flex-end;
+        background: #2563eb;
+        color: white;
+    }
+
+    .bot {
+        align-self: flex-start;
+        background: #334155;
+        color: #e2e8f0;
+    }
+
+    .input-area {
+        display: flex;
+        padding: 10px;
+        background: #0f172a;
+    }
+
+    input {
+        flex: 1;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: #1e293b;
+        color: white;
+    }
+
+    button {
+        margin-left: 10px;
+        padding: 12px 16px;
+        border: none;
+        border-radius: 10px;
+        background: #2563eb;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+    a {
+        color: #60a5fa;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="chat-container">
+
+```
+<div class="header">
+    🎓 College Helpdesk Bot
+</div>
+
+<div class="chat-box" id="chatBox"></div>
+
+<div class="input-area">
+    <input type="text" id="msg" placeholder="Ask something...">
+    <button onclick="send()">Send</button>
+</div>
+```
+
+</div>
+
+<script>
+
+    function send() {
+        let msgInput = document.getElementById("msg");
+        let msg = msgInput.value;
+    
+        if (!msg) return;
+    
+        let chatBox = document.getElementById("chatBox");
+    
+        // User message
+        chatBox.innerHTML += `<div class="message user">${msg}</div>`;
+    
+        // 🔥 Typing animation
+        let typingDiv = document.createElement("div");
+        typingDiv.className = "message bot";
+        typingDiv.innerText = "Bot is typing...";
+        chatBox.appendChild(typingDiv);
+    
+        chatBox.scrollTop = chatBox.scrollHeight;
+    
+        fetch("/chat", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({message: msg})
+        })
+        .then(res => res.json())
+        .then(data => {
+    
+            let response = data.response;
+    
+            // Make links clickable
+            if (response.includes("http")) {
+                response = response.replace(
+                    /(https?:\/\/[^\s]+)/g,
+                    '<a href="$1" target="_blank">📄 Open Link</a>'
+                );
+            }
+    
+            // 🔥 Replace typing with actual response
+            typingDiv.innerHTML = response;
+    
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+    
+        msgInput.value = "";
+    }
+    
+    // Enter key support
+    document.getElementById("msg").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            send();
+        }
+    });
+    
+    // Auto focus
+    document.getElementById("msg").focus();
+    
+    </script>
+    
+
+</body>
+</html>
