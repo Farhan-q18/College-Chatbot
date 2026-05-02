@@ -155,7 +155,21 @@ function send() {
                 Please tell me your name to continue.
                 `;
             } else {
-                userName = msg;
+                // Extract name from sentence
+let lowerMsg = msg.toLowerCase();
+
+if (lowerMsg.includes("my name is")) {
+    userName = msg.split("my name is")[1].trim();
+}
+else if (lowerMsg.includes("i am")) {
+    userName = msg.split("i am")[1].trim();
+}
+else {
+    userName = msg;
+}
+
+// Capitalize first letter
+userName = userName.charAt(0).toUpperCase() + userName.slice(1);
 
                 typingDiv.innerHTML = `
                 Nice to meet you, <b>${userName}</b> 👋<br><br>

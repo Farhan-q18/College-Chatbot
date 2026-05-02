@@ -117,20 +117,26 @@
   "Fee details for Biotechnology",
   "Fees for Chemical Engineering",
   "Is fee same for all branches",
-  "Branch wise fee structure",
-
-  "Lateral entry fee structure",
-  "Fees for lateral entry",
-  "What is the fee for BTech lateral entry",
-  "Fee for second year direct admission",
-  "Lateral entry admission fees"
+  "Branch wise fee structure"
 
     ],
         "responses": [
-  "You can view the detailed B.Tech fee structure here for all branches : https://www.heritageit.edu/PDF/BTech_2025_2026.pdf",
-  "For lateral entry admissions, please refer to the fee details here: https://www.heritageit.edu/PDF/BriefInformationBTech2025_Lateral.pdf"
+  "You can view the detailed B.Tech fee structure here for all branches : https://www.heritageit.edu/PDF/BTech_2025_2026.pdf"
 ]
         
+      },
+      {
+        "tag": "lateral_fee",
+        "patterns":[
+        "Lateral entry fee structure",
+        "Fees for lateral entry",
+        "What is the fee for BTech lateral entry",
+        "Fee for second year direct admission",
+        "Lateral entry admission fees"
+      ],
+      "responses":[
+        "For lateral entry admissions, please refer to the fee details here: https://www.heritageit.edu/PDF/BriefInformationBTech2025_Lateral.pdf"
+      ]
       },
       {
         "tag": "class_routine",
