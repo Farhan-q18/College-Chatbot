@@ -129,16 +129,16 @@ HF_TOKEN=your_token_here
 ## 👥 Contributors
 
 * Farhan Qamar
-* (Add your teammates here)
+
 
 ---
 
 ## 📌 Future Improvements
 
-* Add RAG-based document search
+* Will Add RAG-based document search
 * Improve NLP accuracy
-* Add voice input
-* Deploy on cloud (Render / Railway / AWS)
+* will Add voice input
+* Deploy on cloud (Render / Railway / AWS / vercel)
 
 ---
 
