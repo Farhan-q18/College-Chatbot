@@ -92,8 +92,7 @@
       },
        {
         "tag": "fees",
-        "patterns": [
-"patterns": [
+        "patterns": [ 
   "What is the fee structure",
   "Fee structure",
   "Fee details",
@@ -125,7 +124,7 @@
   "What is the fee for BTech lateral entry",
   "Fee for second year direct admission",
   "Lateral entry admission fees"
-]
+
     ],
         "responses": [
   "You can view the detailed B.Tech fee structure here for all branches : https://www.heritageit.edu/PDF/BTech_2025_2026.pdf",
